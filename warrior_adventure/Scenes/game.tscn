@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://dvpg4poety67s"]
+[gd_scene load_steps=3 format=3 uid="uid://dvpg4poety67s"]
 
 [ext_resource type="PackedScene" uid="uid://bqdub6g3rops6" path="res://Scenes/player.tscn" id="1_ebmjs"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ebmjs"]
 
 [node name="Game" type="Node2D"]
 
@@ -10,3 +12,9 @@ position = Vector2(91, 84)
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(91, 78)
 zoom = Vector2(4, 4)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(92, 133)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_ebmjs")
